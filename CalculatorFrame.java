@@ -159,7 +159,6 @@ public class CalculatorFrame extends JFrame
         add(panel2);
         add(panel3);
         add(panel4);
-       
 
         //default to and operator
         add.setSelected(true);
