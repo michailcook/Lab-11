@@ -202,6 +202,24 @@ public class CalculatorFrame extends JFrame
         
         // TODO: implement the actionlisteners for the divide and equality buttons the same way:
         
+        modulus.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	// TODO: change the opSign, clear the error message and compute result.
+            	errorMessage.setText("");
+            	computeResult.setText("");
+            	opSign.setText("/ ");
+            }
+        });
+        
+        exponentiate.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	// TODO: change the opSign, clear the error message and compute result.
+            	errorMessage.setText("");
+            	computeResult.setText("");
+            	opSign.setText("== ");
+            }
+        });
+        
         /*
          * Set the Change Listener for the Slider. When a change
          * occurs, the text in firstBox should be set to the slider value.
@@ -215,6 +233,7 @@ public class CalculatorFrame extends JFrame
         slider.addChangeListener(new ChangeListener() {
         	public void stateChanged(ChangeEvent e) {
         		// TODO: change the text in the first JTextField. Clear error and result
+        		
             }
         });
 
