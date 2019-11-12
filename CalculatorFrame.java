@@ -233,7 +233,10 @@ public class CalculatorFrame extends JFrame
         slider.addChangeListener(new ChangeListener() {
         	public void stateChanged(ChangeEvent e) {
         		// TODO: change the text in the first JTextField. Clear error and result
-        		
+        		errorMessage.setText("");
+            	computeResult.setText("");
+            	int value = slider.getValue();
+            	firstBox.setText(String.valueOf(value));
             }
         });
 
@@ -270,7 +273,17 @@ public class CalculatorFrame extends JFrame
                      * Finally, perform the operation on the integers and write out the result as
                      * a String to the computeResult text field.
                      */
-                    
+                    if(ops.equals(add)) {
+                    	
+                    	int firstNumber = Integer.parseInt(firstBox.getText());
+                    	int secondNumber = Integer.parseInt(secondBox.getText());
+                    	
+                    	String result = String.valueOf(firstNumber + secondNumber);
+                
+                    	computeResult.setText(result);
+                    	
+                    }
+            		
                     // Clear the error message text field:
                     errorMessage.setText("");
                 }
@@ -280,12 +293,16 @@ public class CalculatorFrame extends JFrame
                 catch (NumberFormatException error) {
                 	// TODO: display the error message "ERROR: Please enter a valid integer."
                     // in the error message text field.
+                	 errorMessage.setText("ERROR: Please enter a valid integer.");
                 	// TODO: Clear computeResult
+                	 computeResult.setText("");
                 }
                 catch (ArithmeticException error) {
                 	// TODO: display the error message "ERROR: Tried to divide by 0."
+                	 errorMessage.setText("ERROR: Tried to divide by 0.");
                     // in the error message text field.
                 	// TODO: Clear computeResult
+                	computeResult.setText("");
                 }
             }
         });
