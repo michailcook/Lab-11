@@ -273,7 +273,7 @@ public class CalculatorFrame extends JFrame
                      * Finally, perform the operation on the integers and write out the result as
                      * a String to the computeResult text field.
                      */
-                    if(ops.equals(add)) {
+                    if(add.isSelected() == true) {
                     	
                     	int firstNumber = Integer.parseInt(firstBox.getText());
                     	int secondNumber = Integer.parseInt(secondBox.getText());
@@ -281,6 +281,44 @@ public class CalculatorFrame extends JFrame
                     	String result = String.valueOf(firstNumber + secondNumber);
                 
                     	computeResult.setText(result);
+                    	
+                    }
+                    
+                    if(multiply.isSelected() == true) {
+                    	
+                    	int firstNumber = Integer.parseInt(firstBox.getText());
+                    	int secondNumber = Integer.parseInt(secondBox.getText());
+                    	
+                    	String result = String.valueOf(firstNumber * secondNumber);
+                
+                    	computeResult.setText(result);
+                    	
+                    }
+                    
+                    if(modulus.isSelected() == true) {
+                    	
+                    	int firstNumber = Integer.parseInt(firstBox.getText());
+                    	int secondNumber = Integer.parseInt(secondBox.getText());
+                    	
+                    	String result = String.valueOf(firstNumber / secondNumber);
+                
+                    	computeResult.setText(result);
+                    	
+                    }
+                    
+                    if(exponentiate.isSelected() == true) {
+                    	
+                    	int firstNumber = Integer.parseInt(firstBox.getText());
+                    	int secondNumber = Integer.parseInt(secondBox.getText());
+                    	
+                    	if(firstNumber == secondNumber) {
+                    		
+                    		computeResult.setText("True");
+                    	}
+                    	else {
+                    		computeResult.setText("False");
+                    	
+                    	}
                     	
                     }
             		
